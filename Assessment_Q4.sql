@@ -10,7 +10,7 @@ with base_cte as (
       a.created_on, 
       current_timestamp()
     ) tenure_months, -- calculating differnce in months from account creation till date
-    count(savings_id) total_transactions, -- counting number of transaction for each customer
+    count(b.id) total_transactions, -- counting number of transaction for each customer
     avg(confirmed_amount * 0.001) avg_profit_per_transaction -- calculation of avergae profit per transaction
   from 
     users_customuser a 
