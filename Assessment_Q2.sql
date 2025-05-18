@@ -6,7 +6,7 @@ with base_cte as(
   select 
     owner_id, 
     month(transaction_date) month, -- extracting month from transaction date
-    count(transaction_date) numOfTran -- count of transactions
+    count(id) numOfTran -- count of transactions
   from 
     savings_savingsaccount 
   group by 
